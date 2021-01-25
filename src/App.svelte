@@ -2,8 +2,12 @@
   import {onMount} from 'svelte';
   import { currentSlide, totalSlides } from './state';
   import './styling/main.css';
-  
-  import TitlePage from './templates/TitlePage.svelte'
+  // Templates
+  import Title from './templates/Title.svelte'
+  import H_2_Split from './templates/H_2_Split.svelte'
+
+  // Components
+  import AnimatedImage from './components/AnimatedImage.svelte'
 
   // Create a handler for clicking on the page (right left)
   // Create a handler for right and left arrow
@@ -50,13 +54,22 @@
   <div class="fixed h-full w-28 right-0 top-0 z-50 
               cursor-pointer hover:bg-white hover:bg-opacity-10"
        on:click="{nextSlide}"></div>
-  <TitlePage
+  <Title
     title="Test Presentation"
     subtitle="This is the first time that I try to make a presentation in the browser"
     backgroundImage={"https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2767&q=80"}/>
-  <TitlePage
-    title="This is the second slide"
-    subtitle="How does clicking through work."
-    backgroundImage={"https://images.unsplash.com/photo-1611444275099-d39965256256?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"}/>
+  <H_2_Split>
+    <div slot="left" class="h-full w-full">
+      <AnimatedImage
+      backgroundImage={"https://images.unsplash.com/photo-1611444275099-d39965256256?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"}/>
+    </div>
+    <div slot="right" class="p-12">
+      <h1>The Page Heading</h1>
+      <ul>
+        <li>First entry</li>
+        <li>Second entry</li>
+      </ul>
+    </div>
+  </H_2_Split>
 </div>
   
