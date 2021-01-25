@@ -1,6 +1,6 @@
 <script lang='typescript'>
-  import {onMount, beforeUpdate} from 'svelte';
-  import { currentSlide, totalSlides } from './state';
+  import { onDestroy} from 'svelte';
+  import { currentSlide, totalSlides, reset } from './state';
   import './styling/main.css';
 
   import TestSlideshow from './TestSlideshow.svelte'
@@ -9,9 +9,7 @@
   let slideCount = 0
   totalSlides.subscribe(n => slideCount = n)
 
-  beforeUpdate(() => {
-    console.log("triggered!")
-  })
+  onDestroy(() => reset())
 
   const next = () => {
     currentSlide.update(n => {

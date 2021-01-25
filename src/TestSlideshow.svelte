@@ -7,8 +7,14 @@
   import AnimatedImage from './components/AnimatedImage.svelte'
 </script>
 
-<style>
-  
+<style @global>
+  h1 {
+    @apply text-4xl;
+  }
+
+  .tester {
+    @apply text-4xl;
+  }
 </style>
 
 
@@ -22,7 +28,7 @@
     backgroundImage={"https://images.unsplash.com/photo-1611444275099-d39965256256?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"}/>
   </div>
   <div slot="right" class="p-12">
-    <h1>The Page Heading</h1>
+    <h1 class="tester">The Page Heading</h1>
     <ul>
       <li>First entry</li>
       <li>Second entry</li>

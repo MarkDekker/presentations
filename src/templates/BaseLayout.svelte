@@ -11,13 +11,11 @@
   let active = false
   let numberOfThisSlide = 0
 
-  onMount(() => {
-    totalSlides.update(slideCount => {
-      numberOfThisSlide = slideCount + 1
-      return slideCount + 1
-    })
-    currentSlide.subscribe(activeSlideNumber => {
-      active = numberOfThisSlide === activeSlideNumber
-    })
+  totalSlides.update(slideCount => {
+    numberOfThisSlide = slideCount + 1
+    return slideCount + 1
+  })
+  currentSlide.subscribe(activeSlideNumber => {
+    active = numberOfThisSlide === activeSlideNumber
   })
 </script>
