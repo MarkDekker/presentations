@@ -9,7 +9,6 @@
   </div>
 </BaseLayout>
 
-
 <script>
   import BaseLayout from './BaseLayout.svelte'
 </script>

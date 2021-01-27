@@ -1,4 +1,4 @@
-<div class="h-full w-full overflow-hidden flex justify-center items-center">
+<div class="h-full w-full overflow-hidden flex justify-center items-center bg-black">
   <div style="background-image: url('{backgroundImage}')"
        class="bg-scroll ken-burns bg-no-repeat bg-cover image relative"
        class:unblur="{unblur}"
